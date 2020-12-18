@@ -1,0 +1,25 @@
+<div>
+    <h2>Registration page</h2><hr>
+    <form #RegForm="ngForm" (ngSubmit)="handleRegFormValues(RegForm.value)">
+        <label>
+            Enter Name : <input type="String" name="name" [(ngModel)]="name"
+            #un ="ngModel" required autocomplete="off">
+            <span style="color:red" [hidden]="un.valid || un.pristine">Name is mandotory</span>
+        </label>
+        <br>
+        <br>
+        <label>
+            Enter Password : <input type="password" name="password" [(ngModel)]="password"
+            #pw ="ngModel" required>
+        </label>
+        <br>
+        <br>
+        <label>
+            Enter Mobile Number : <input type="number" name="mob_no" [(ngModel)]="mob_no"
+            #mn ="ngModel" required>
+        </label>
+        <span style="color:red" [hidden]="mn.valid || mn.pristine">Mobile Number is mandotory</span>
+        <br>
+        <input type="submit" value="Submit" [disabled] = "RegForm.invalid">
+    </form>
+</div>

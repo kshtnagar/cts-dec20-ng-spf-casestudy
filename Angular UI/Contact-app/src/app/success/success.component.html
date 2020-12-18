@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <h1 class="text-center">Hello {{userId}}</h1>
+    <div class="row">
+    <div class="col-3">
+    <a routerLink = "showContact" class="btn btn-primary">Show Contacts</a>
+    </div>
+    <div class="col-3">
+      <a routerLink = "addContact" class="btn btn-primary">Add Contact</a>
+  </div>
+  </div>
+  <hr>
+  <div><button (click)="showContact({{userId}})">Show COntact</button></div>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Mobile NO</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="ley u of contatcs">
+              <td>{{u.id}}</td>
+              <td>{{u.name}}</td>
+              <td>{{u.mob_no}}</td>
+          </tr>
+      </tbody>
+  </table>
+  <router-outlet></router-outlet>
+  </div>
